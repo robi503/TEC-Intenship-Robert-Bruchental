@@ -1,0 +1,39 @@
+﻿@model PersonDetails
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Update</h1>
+
+<h4>PersonDetails</h4>
+<hr />
+<form method="post" asp-action="Update">
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BirthDay" class="control-label"></label>
+                <input asp-for="BirthDay" class="form-control" />
+                <span asp-validation-for="BirthDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonCity" class="control-label"></label>
+                <input asp-for="PersonCity" class="form-control" />
+                <span asp-validation-for="PersonCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
