@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using ApiApp.Model;
 using Internship.Model;
-using System.Data.Entity;
 
 
 namespace ApiApp.Controllers

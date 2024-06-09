@@ -22,8 +22,8 @@ namespace WebApp.Controllers
         {
             var personsResponse = await _apiClient.GetAsync($"{_apiClient.BaseAddress}/persons");
             var personsContent = await personsResponse.Content.ReadAsStringAsync();
-            var persons = JsonConvert.DeserializeObject<List<Position>>(personsContent);
-            ViewBag.Persons = new SelectList(persons, "PositionId", "Name");
+            var persons = JsonConvert.DeserializeObject<List<Person>>(personsContent);
+            ViewBag.Persons = new SelectList(persons, "Id", "Name");
         }
 
         public async Task<IActionResult> Index()
@@ -63,12 +63,13 @@ namespace WebApp.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("Error", "There is an API error");
+                    await LoadViewBagData();
                     return View(personDetails);
                 }
             }
             else
             {
+                await LoadViewBagData();
                 return View(personDetails);
             }
         }

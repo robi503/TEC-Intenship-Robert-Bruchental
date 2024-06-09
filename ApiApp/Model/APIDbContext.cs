@@ -1,5 +1,4 @@
-﻿using System.Reflection.Metadata;
-using ApiApp.Model;
+﻿using ApiApp.Model;
 using Microsoft.EntityFrameworkCore;
 
 
